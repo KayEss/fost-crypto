@@ -200,6 +200,7 @@ elseif("${ANDROID_ABI}" STREQUAL "")
         ## <https://bugs.llvm.org/show_bug.cgi?id=39895>
         target_compile_definitions(crypto++ PRIVATE CRYPTOPP_DISABLE_MIXED_ASM)
         target_compile_options(crypto++ PRIVATE
+                -Wno-deprecated-copy
                 -Wno-keyword-macro
                 -Wno-unused-const-variable
                 -Wno-unused-private-field
@@ -220,7 +221,7 @@ else()
             -Wno-unused-const-variable
             -Wno-unused-private-field
         )
-        
+
     if(${ANDROID_ABI} MATCHES "^x86")
         target_compile_options(crypto++ PUBLIC
             -maes -mpclmul -msha -msse4.1 -msse4.2 -mssse3)
