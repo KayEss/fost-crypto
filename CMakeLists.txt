@@ -207,7 +207,7 @@ elseif("${ANDROID_ABI}" STREQUAL "")
             )
     endif()
 
-    if ("${TARGET_ABI}" STREQUAL "amd64")
+    if ("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "^x86")
         target_compile_options(crypto++
             PUBLIC -maes -mpclmul -msha -msse4.1 -msse4.2 -mssse3)
     else()
