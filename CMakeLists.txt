@@ -192,6 +192,7 @@ elseif("${ANDROID_ABI}" STREQUAL "")
         target_compile_definitions(crypto++ PUBLIC CRYPTOPP_DISABLE_AVX)
         target_compile_options(crypto++ PRIVATE
                 -Wno-class-memaccess
+                -Wno-deprecated-copy
                 -Wno-unknown-pragmas
             )
     elseif(${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "AppleClang")
