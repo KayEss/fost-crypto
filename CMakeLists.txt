@@ -200,6 +200,7 @@ elseif("${ANDROID_ABI}" STREQUAL "")
         ## <https://bugs.llvm.org/show_bug.cgi?id=39895>
         target_compile_definitions(crypto++ PRIVATE CRYPTOPP_DISABLE_MIXED_ASM)
         target_compile_options(crypto++ PRIVATE
+                -Wno-bitwise-instead-of-logical
                 -Wno-deprecated-copy
                 -Wno-keyword-macro
                 -Wno-unused-const-variable
