@@ -8,9 +8,9 @@ add_library(crypto++ STATIC
         crypto++/adler32.cpp
         crypto++/algebra.cpp
         crypto++/algparam.cpp
+        # crypto++/allocate.cpp
         crypto++/arc4.cpp
         crypto++/aria.cpp
-        crypto++/aria_simd.cpp
         crypto++/ariatab.cpp
         crypto++/asn.cpp
         crypto++/authenc.cpp
@@ -28,7 +28,7 @@ add_library(crypto++ STATIC
         crypto++/casts.cpp
         crypto++/cbcmac.cpp
         crypto++/ccm.cpp
-#         crypto++/chacha_avx.cpp
+        # crypto++/chacha_avx.cpp
         crypto++/chacha.cpp
         crypto++/chachapoly.cpp
         crypto++/chacha_simd.cpp
@@ -86,6 +86,12 @@ add_library(crypto++ STATIC
         crypto++/keccak_simd.cpp
         crypto++/lea.cpp
         crypto++/lea_simd.cpp
+        # crypto++/lsh256_avx.cpp
+        crypto++/lsh256.cpp
+        crypto++/lsh256_sse.cpp
+        # crypto++/lsh512_avx.cpp
+        crypto++/lsh512.cpp
+        crypto++/lsh512_sse.cpp
         crypto++/luc.cpp
         crypto++/mars.cpp
         crypto++/marss.cpp
@@ -106,10 +112,8 @@ add_library(crypto++ STATIC
         crypto++/pkcspad.cpp
         crypto++/poly1305.cpp
         crypto++/polynomi.cpp
-        crypto++/ppc_power7.cpp
-        crypto++/ppc_power8.cpp
-        crypto++/ppc_power9.cpp
         crypto++/ppc_simd.cpp
+        crypto++/primetab.cpp
         crypto++/pssr.cpp
         crypto++/pubkey.cpp
         crypto++/queue.cpp
@@ -142,9 +146,7 @@ add_library(crypto++ STATIC
         crypto++/shark.cpp
         crypto++/sha_simd.cpp
         crypto++/simeck.cpp
-        crypto++/simeck_simd.cpp
         crypto++/simon128_simd.cpp
-        crypto++/simon64_simd.cpp
         crypto++/simon.cpp
         crypto++/simple.cpp
         crypto++/skipjack.cpp
@@ -153,7 +155,6 @@ add_library(crypto++ STATIC
         crypto++/sm4_simd.cpp
         crypto++/sosemanuk.cpp
         crypto++/speck128_simd.cpp
-        crypto++/speck64_simd.cpp
         crypto++/speck.cpp
         crypto++/square.cpp
         crypto++/squaretb.cpp
@@ -173,6 +174,7 @@ add_library(crypto++ STATIC
         crypto++/xed25519.cpp
         crypto++/xtr.cpp
         crypto++/xtrcrypt.cpp
+        crypto++/xts.cpp
         crypto++/zdeflate.cpp
         crypto++/zinflate.cpp
         crypto++/zlib.cpp
