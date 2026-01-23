@@ -8,7 +8,7 @@ add_library(crypto++ STATIC
         crypto++/adler32.cpp
         crypto++/algebra.cpp
         crypto++/algparam.cpp
-        # crypto++/allocate.cpp
+        crypto++/allocate.cpp
         crypto++/arc4.cpp
         crypto++/aria.cpp
         crypto++/ariatab.cpp
