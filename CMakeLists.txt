@@ -1,3 +1,5 @@
+project(fost-crypto LANGUAGES CXX ASM)
+
 add_library(crypto++ STATIC
         # These three must be at the top of the list
         crypto++/cryptlib.cpp
@@ -235,11 +237,15 @@ else()
             -maes -mpclmul -msha -msse4.1 -msse4.2 -mssse3)
     elseif(${ANDROID_ABI} STREQUAL "armeabi-v7a")
         # Setting NEON only really makes sense for this ABI
-        target_compile_options(crypto++ PUBLIC -mfpu=neon)
+        #target_compile_options(crypto++ PUBLIC -mfpu=neon)
+        # For ARM we don't have a proper assembler in the NDK yet
+        target_compile_definitions(crypto++ PRIVATE CRYPTOPP_DISABLE_ASM)
     elseif(${ANDROID_ABI} STREQUAL "arm64-v8a")
-        # There isn't anything that we need to do for this architecture
+        # Probably these would be the required fields for ASM support
+        #target_compile_options(crypto++ PUBLIC -march=armv8-a+crc+crypto)
+        # For ARM we don't have a proper assembler in the NDK yet
+        target_compile_definitions(crypto++ PRIVATE CRYPTOPP_DISABLE_ASM)
     else()
         message(FATAL_ERROR "Can't determine android architecture " ${ANDROID_ABI})
     endif()
 endif()
-
